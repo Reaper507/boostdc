@@ -2,17 +2,16 @@
 #define _HUB_H_GUARD_
 
 #include <string>
-
+#include "../thread/thread.h"
 
 using namespace std;
 
-class hub
+
+class hub : thread
 {
  private:
   string _url;
-
-
-
+  
   hub();
   hub(const hub&);
 
@@ -23,6 +22,7 @@ class hub
 
 
   void connect();
+  virtual int exec();
 };
 
 #endif

@@ -7,6 +7,9 @@ int main(int, char**)
 {
   hub* hb = new hub("fakeurl");
 
+  hb->connect();
+
+
   delete hb;
 
 
