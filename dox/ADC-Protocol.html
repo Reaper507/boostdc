@@ -1,0 +1,2101 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+    "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="generator" content="AsciiDoc 8.2.3" />
+<style type="text/css">
+/* Debug borders */
+p, li, dt, dd, div, pre, h1, h2, h3, h4, h5, h6 {
+/*
+  border: 1px solid red;
+*/
+}
+
+body {
+  margin: 1em 5% 1em 5%;
+}
+
+a {
+  color: blue;
+  text-decoration: underline;
+}
+a:visited {
+  color: fuchsia;
+}
+
+em {
+  font-style: italic;
+}
+
+strong {
+  font-weight: bold;
+}
+
+tt {
+  color: navy;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #527bbd;
+  font-family: sans-serif;
+  margin-top: 1.2em;
+  margin-bottom: 0.5em;
+  line-height: 1.3;
+}
+
+h1, h2, h3 {
+  border-bottom: 2px solid silver;
+}
+h2 {
+  padding-top: 0.5em;
+}
+h3 {
+  float: left;
+}
+h3 + * {
+  clear: left;
+}
+
+div.sectionbody {
+  font-family: serif;
+  margin-left: 0;
+}
+
+hr {
+  border: 1px solid silver;
+}
+
+p {
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+
+pre {
+  padding: 0;
+  margin: 0;
+}
+
+span#author {
+  color: #527bbd;
+  font-family: sans-serif;
+  font-weight: bold;
+  font-size: 1.1em;
+}
+span#email {
+}
+span#revision {
+  font-family: sans-serif;
+}
+
+div#footer {
+  font-family: sans-serif;
+  font-size: small;
+  border-top: 2px solid silver;
+  padding-top: 0.5em;
+  margin-top: 4.0em;
+}
+div#footer-text {
+  float: left;
+  padding-bottom: 0.5em;
+}
+div#footer-badges {
+  float: right;
+  padding-bottom: 0.5em;
+}
+
+div#preamble,
+div.tableblock, div.imageblock, div.exampleblock, div.verseblock,
+div.quoteblock, div.literalblock, div.listingblock, div.sidebarblock,
+div.admonitionblock {
+  margin-right: 10%;
+  margin-top: 1.5em;
+  margin-bottom: 1.5em;
+}
+div.admonitionblock {
+  margin-top: 2.5em;
+  margin-bottom: 2.5em;
+}
+
+div.content { /* Block element content. */
+  padding: 0;
+}
+
+/* Block element titles. */
+div.title, caption.title {
+  font-family: sans-serif;
+  font-weight: bold;
+  text-align: left;
+  margin-top: 1.0em;
+  margin-bottom: 0.5em;
+}
+div.title + * {
+  margin-top: 0;
+}
+
+td div.title:first-child {
+  margin-top: 0.0em;
+}
+div.content div.title:first-child {
+  margin-top: 0.0em;
+}
+div.content + div.title {
+  margin-top: 0.0em;
+}
+
+div.sidebarblock > div.content {
+  background: #ffffee;
+  border: 1px solid silver;
+  padding: 0.5em;
+}
+
+div.listingblock {
+  margin-right: 0%;
+}
+div.listingblock > div.content {
+  border: 1px solid silver;
+  background: #f4f4f4;
+  padding: 0.5em;
+}
+
+div.quoteblock > div.content {
+  padding-left: 2.0em;
+}
+
+div.attribution {
+  text-align: right;
+}
+div.verseblock + div.attribution {
+  text-align: left;
+}
+
+div.admonitionblock .icon {
+  vertical-align: top;
+  font-size: 1.1em;
+  font-weight: bold;
+  text-decoration: underline;
+  color: #527bbd;
+  padding-right: 0.5em;
+}
+div.admonitionblock td.content {
+  padding-left: 0.5em;
+  border-left: 2px solid silver;
+}
+
+div.exampleblock > div.content {
+  border-left: 2px solid silver;
+  padding: 0.5em;
+}
+
+div.verseblock div.content {
+  white-space: pre;
+}
+
+div.imageblock div.content { padding-left: 0; }
+div.imageblock img { border: 1px solid silver; }
+span.image img { border-style: none; }
+
+dl {
+  margin-top: 0.8em;
+  margin-bottom: 0.8em;
+}
+dt {
+  margin-top: 0.5em;
+  margin-bottom: 0;
+  font-style: italic;
+}
+dd > *:first-child {
+  margin-top: 0;
+}
+
+ul, ol {
+    list-style-position: outside;
+}
+div.olist2 ol {
+  list-style-type: lower-alpha;
+}
+
+div.tableblock > table {
+  border: 3px solid #527bbd;
+}
+thead {
+  font-family: sans-serif;
+  font-weight: bold;
+}
+tfoot {
+  font-weight: bold;
+}
+
+div.hlist {
+  margin-top: 0.8em;
+  margin-bottom: 0.8em;
+}
+div.hlist td {
+  padding-bottom: 5px;
+}
+td.hlist1 {
+  vertical-align: top;
+  font-style: italic;
+  padding-right: 0.8em;
+}
+td.hlist2 {
+  vertical-align: top;
+}
+
+@media print {
+  div#footer-badges { display: none; }
+}
+
+div#toctitle {
+  color: #527bbd;
+  font-family: sans-serif;
+  font-size: 1.1em;
+  font-weight: bold;
+  margin-top: 1.0em;
+  margin-bottom: 0.1em;
+}
+
+div.toclevel1, div.toclevel2, div.toclevel3, div.toclevel4 {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+div.toclevel2 {
+  margin-left: 2em;
+  font-size: 0.9em;
+}
+div.toclevel3 {
+  margin-left: 4em;
+  font-size: 0.9em;
+}
+div.toclevel4 {
+  margin-left: 6em;
+  font-size: 0.9em;
+}
+/* Workarounds for IE6's broken and incomplete CSS2. */
+
+div.sidebar-content {
+  background: #ffffee;
+  border: 1px solid silver;
+  padding: 0.5em;
+}
+div.sidebar-title, div.image-title {
+  font-family: sans-serif;
+  font-weight: bold;
+  margin-top: 0.0em;
+  margin-bottom: 0.5em;
+}
+
+div.listingblock div.content {
+  border: 1px solid silver;
+  background: #f4f4f4;
+  padding: 0.5em;
+}
+
+div.quoteblock-content {
+  padding-left: 2.0em;
+}
+
+div.exampleblock-content {
+  border-left: 2px solid silver;
+  padding-left: 0.5em;
+}
+
+/* IE6 sets dynamically generated links as visited. */
+div#toc a:visited { color: blue; }
+</style>
+<script type="text/javascript">
+/*<![CDATA[*/
+window.onload = function(){generateToc(2)}
+/* Author: Mihai Bazon, September 2002
+ * http://students.infoiasi.ro/~mishoo
+ *
+ * Table Of Content generator
+ * Version: 0.4
+ *
+ * Feel free to use this script under the terms of the GNU General Public
+ * License, as long as you do not remove or alter this notice.
+ */
+
+ /* modified by Troy D. Hanson, September 2006. License: GPL */
+ /* modified by Stuart Rackham, October 2006. License: GPL */
+
+function getText(el) {
+  var text = "";
+  for (var i = el.firstChild; i != null; i = i.nextSibling) {
+    if (i.nodeType == 3 /* Node.TEXT_NODE */) // IE doesn't speak constants.
+      text += i.data;
+    else if (i.firstChild != null)
+      text += getText(i);
+  }
+  return text;
+}
+
+function TocEntry(el, text, toclevel) {
+  this.element = el;
+  this.text = text;
+  this.toclevel = toclevel;
+}
+
+function tocEntries(el, toclevels) {
+  var result = new Array;
+  var re = new RegExp('[hH]([2-'+(toclevels+1)+'])');
+  // Function that scans the DOM tree for header elements (the DOM2
+  // nodeIterator API would be a better technique but not supported by all
+  // browsers).
+  var iterate = function (el) {
+    for (var i = el.firstChild; i != null; i = i.nextSibling) {
+      if (i.nodeType == 1 /* Node.ELEMENT_NODE */) {
+        var mo = re.exec(i.tagName)
+        if (mo)
+          result[result.length] = new TocEntry(i, getText(i), mo[1]-1);
+        iterate(i);
+      }
+    }
+  }
+  iterate(el);
+  return result;
+}
+
+// This function does the work. toclevels = 1..4.
+function generateToc(toclevels) {
+  var toc = document.getElementById("toc");
+  var entries = tocEntries(document.getElementsByTagName("body")[0], toclevels);
+  for (var i = 0; i < entries.length; ++i) {
+    var entry = entries[i];
+    if (entry.element.id == "")
+      entry.element.id = "toc" + i;
+    var a = document.createElement("a");
+    a.href = "#" + entry.element.id;
+    a.appendChild(document.createTextNode(entry.text));
+    var div = document.createElement("div");
+    div.appendChild(a);
+    div.className = "toclevel" + entry.toclevel;
+    toc.appendChild(div);
+  }
+}
+/*]]>*/
+</script>
+<title>ADC Protocol</title>
+</head>
+<body>
+<div id="header">
+<h1>ADC Protocol</h1>
+<span id="author">Jacek Sieka</span><br />
+<span id="email"><tt>&lt;<a href="mailto:arnetheduck@gmail.com">arnetheduck@gmail.com</a>&gt;</tt></span><br />
+<span id="revision">version 1.0,</span>
+December 2007
+<div id="toc">
+  <div id="toctitle">Table of Contents</div>
+  <noscript><p><b>JavaScript must be enabled in your browser to display the table of contents.</b></p></noscript>
+</div>
+</div>
+<h2 id="_abstract">1. Abstract</h2>
+<div class="sectionbody">
+<div class="para"><p>ADC is a text protocol for a client-server network similar to Neo-Modus'
+Direct Connect (NMDC). The goal is to create a simple protocol that doesn't
+require much effort neither in hub nor client, and is yet extensible. It
+addresses some of the issues in the NMDC protocol, but not all.</p></div>
+<div class="para"><p>The same protocol structure is used both for client-hub and client-client
+communication. This document is split into two parts; the first shows the
+structure of the protocol, while the second implements a specific system using
+this structure. ADC stands for anything you would like it to stand for;
+Advanced Direct Connect is the first neutral thing that springs to mind =).</p></div>
+<div class="para"><p>Many ideas for the protocol come from Jan Vidar Krey's DCTNG draft. Major
+contributors include Dustin Brody, Walter Doekes, Timmo Stange, Fredrik
+Ullner, Fredrik Stenberg and others. Jon Hess contributed the original Direct
+Connect idea through the Neo-Modus Direct Connect client / hub.</p></div>
+</div>
+<h2 id="_version_history">2. Version history</h2>
+<div class="sectionbody">
+<div class="para"><p>The latest draft of the next version of this document as well as intermediate
+and older versions can be downloaded from
+$URL: https://dcplusplus.svn.sourceforge.net/svnroot/dcplusplus/dcplusplus/trunk/ADC.txt $.
+This version correspods to $Revision: 923 $.</p></div>
+<h3 id="_version_1_0_2007_12_01">2.1. Version 1.0, 2007-12-01</h3><div style="clear:left"></div>
+<div class="ilist"><ul>
+<li>
+<p>
+Initial release
+</p>
+</li>
+</ul></div>
+</div>
+<h2 id="_line_protocol">3. Line protocol</h2>
+<div class="sectionbody">
+<h3 id="_general">3.1. General</h3><div style="clear:left"></div>
+<div class="ilist"><ul>
+<li>
+<p>
+All messages begin with a four-letter word. The first letter designates how
+  the message should be sent and the other three specify what to do.
+</p>
+</li>
+<li>
+<p>
+Parameters are separated by space and a newline (codepoint 0x0a) ends each
+  message. The string "\s" escapes space, "\n" newline and "\\" backslash.
+  This version of the protocol reserves all other escapes for future use; any
+  message containing unknown escapes must be discarded.
+</p>
+</li>
+<li>
+<p>
+All text must be sent as UTF-8 encoded Unicode in normalization form C.
+</p>
+</li>
+<li>
+<p>
+Clients must ignore unknown/badly formatted messages. Hubs must ignore
+  invalid messages and should dispatch unknown messages according to their
+  type.
+</p>
+</li>
+<li>
+<p>
+Client addresses must be specified in dotted-decimal form ("x.x.x.x") for
+  IPv4 and RFC 1884 form for IPv6. Hub addresses must be specified in URL
+  form, with "adc" as protocol specifier ("adc://server:port/").
+</p>
+</li>
+<li>
+<p>
+Numbers are sent as strings in standard floating point notation, using <em>.</em>
+  as the decimal separator and without a thousands separator. Integers are
+  numbers with neither a decimal portion nor an exponent. Applications should
+  be prepared to handle at least 64-bit signed integers and 64-bit floating
+  point numbers. A <em>-</em> prefix negates.
+</p>
+</li>
+<li>
+<p>
+SIDs, PIDs, CIDs, and short binary data are sent as base32-encoded strings.
+  Long binary data transfers should use the file transfer mechanism with named
+  roots.
+</p>
+</li>
+<li>
+<p>
+Extension names, protocol names, and other text not entered by the user may
+  only include viewable characters that can be encoded by one byte in the
+  UTF-8 encoding (Unicode codepoints 33-127). ADC is case-sensitive, requiring
+  upper case for command names.
+</p>
+</li>
+<li>
+<p>
+Some commands and functionality require the use of a hash function.  The
+  hash function is negotiated during session setup and stays the same for the
+  duration of the session.
+</p>
+</li>
+</ul></div>
+<h3 id="_message_syntax">3.2. Message syntax</h3><div style="clear:left"></div>
+<div class="literalblock">
+<div class="content">
+<pre><tt>message               ::= message_body? eol
+message_body          ::= (b_message_header | cih_message_header | de_message_header | f_message_header | u_message_header | message_header)
+                          (separator positional_parameter)* (separator named_parameter)*
+b_message_header      ::= 'B' command_name separator my_sid
+cih_message_header    ::= ('C' | 'I' | 'H') command_name
+de_message_header     ::= ('D' | 'E') command_name separator my_sid separator target_sid
+f_message_header      ::= 'F' command_name separator my_sid separator (('+'|'-') feature_name)+
+u_message_header      ::= 'U' command_name separator my_cid
+command_name          ::= simple_alpha simple_alphanum simple_alphanum
+positional_parameter  ::= parameter_value
+named_parameter       ::= parameter_name parameter_value?
+parameter_name        ::= simple_alpha simple_alphanum
+parameter_value       ::= escaped_letter+
+target_sid            ::= encoded_sid
+my_sid                ::= encoded_sid
+encoded_sid           ::= base32_character{4}
+my_cid                ::= encoded_cid
+encoded_cid           ::= base32_character+
+base32_character      ::= simple_alpha | [2-7]
+feature_name          ::= simple_alpha simple_alphanum{3}
+escaped_letter        ::= [^ \#x0a] | escape 's' | escape 'n' | escape escape
+escape                ::= '\'
+simple_alpha          ::= [A-Z]
+simple_alphanum       ::= [A-Z0-9]
+eol                   ::= #x0a
+separator             ::= ' '</tt></pre>
+</div></div>
+<h3 id="_message_types">3.3. Message types</h3><div style="clear:left"></div>
+<div class="para"><p>Message type specifies how messages should be routed and thus which additional
+fields can be found in the message header. Clients should use the most
+limiting type, in terms of recipients, that makes sense for a particular
+message when sending it to the hub for distribution. Clients should use the
+message type only to aid in parsing the message and otherwise ignore it. The
+following message types are defined:</p></div>
+<div class="tableblock">
+<table rules="all"
+frame="border"
+cellspacing="0" cellpadding="4">
+<tbody valign="top">
+  <tr>
+    <td align="left">
+    B
+    </td>
+    <td align="left">
+    Broadcast
+    </td>
+    <td align="left">
+    Hub must send message to all connected clients, including the sender of the message.
+    </td>
+  </tr>
+  <tr>
+    <td align="left">
+    C
+    </td>
+    <td align="left">
+    Client message
+    </td>
+    <td align="left">
+    Clients must use this message type when communicating directly over TCP.
+    </td>
+  </tr>
+  <tr>
+    <td align="left">
+    D
+    </td>
+    <td align="left">
+    Direct message
+    </td>
+    <td align="left">
+    The hub must send the message to the target_sid user.
+    </td>
+  </tr>
+  <tr>
+    <td align="left">
+    E
+    </td>
+    <td align="left">
+    Echo message
+    </td>
+    <td align="left">
+    The hub must send the message to the target_sid user and the my_sid user.
+    </td>
+  </tr>
+  <tr>
+    <td align="left">
+    F
+    </td>
+    <td align="left">
+    Feature broadcast
+    </td>
+    <td align="left">
+    The hub must send message to all clients that support both all required (+) and no excluded (-) features named. The feature name is matched against the corresponding SU field in INF sent by each client.
+    </td>
+  </tr>
+  <tr>
+    <td align="left">
+    H
+    </td>
+    <td align="left">
+    Hub message
+    </td>
+    <td align="left">
+    Clients must use this message type when a message is intended for the hub only.
+    </td>
+  </tr>
+  <tr>
+    <td align="left">
+    I
+    </td>
+    <td align="left">
+    Info message
+    </td>
+    <td align="left">
+    Hubs must use this message type when sending a message to a client that didn't come from another client.
+    </td>
+  </tr>
+  <tr>
+    <td align="left">
+    U
+    </td>
+    <td align="left">
+    UDP message
+    </td>
+    <td align="left">
+    Clients must use this message type when communicating directly over UDP.
+    </td>
+  </tr>
+</tbody>
+</table>
+</div>
+<h3 id="_session_hash">3.4. Session hash</h3><div style="clear:left"></div>
+<div class="para"><p>Certain commands require the use of a hash function. The hash function used is
+negotiated using the SUP mechanism each time a new connection is established.
+When a client first connects, it offers a set of hash functions as SUP
+features. The server picks one of the offered functions and communicates its
+choice to the client by placing it before any other hash features present in
+the first SUP from the server. Clients and hubs are required to support at
+least one hash function, used both for protocol purposes and file
+identification.</p></div>
+<h3 id="_client_identification">3.5. Client identification</h3><div style="clear:left"></div>
+<div class="para"><p>Each client is identified by three different IDs, Session ID (SID), Private ID
+(PID), and Client ID (CID).</p></div>
+<h4 id="_session_id">3.5.1. Session ID</h4>
+<div class="para"><p>Session IDs appear in all communication that interacts with the hub. They
+identify a unique user on a single hub and are assigned by the hub during
+initial protocol negotiation. SIDs are 20 bits long and encoded using a 4-byte
+base32 encoded string.</p></div>
+<h4 id="_private_id">3.5.2. Private ID</h4>
+<div class="para"><p>Private IDs globally identify a unique client. They function during initial
+protocol negotiation to generate the CID and are invisible to other clients.
+PIDs should be generated in a way to avoid collisions, for example using the
+hash of the current time and primary network card MAC address if sufficient
+randomness cannot be generated. Hubs and clients may not disclose PIDs to
+other clients; doing so weakens the security of the ADC network. Clients
+should should keep the same PID between sessions and hubs. PID length follows
+the length of the hash algorithm used for the session.</p></div>
+<h4 id="_client_id">3.5.3. Client ID</h4>
+<div class="para"><p>Client IDs globally and publicly identify a unique client and underlie client
+to client communication. They are generated by hashing the (unencoded) PID
+with the session hash algorithm. Hubs should register clients by CID.  CID
+length follows the length of the hash algorithm used for the session. Clients
+must be prepared to handle CIDs of varying lengths.</p></div>
+</div>
+<h2 id="_files">4. Files</h2>
+<div class="sectionbody">
+<h3 id="_file_names_and_structure">4.1. File names and structure</h3><div style="clear:left"></div>
+<div class="para"><p>Filenames are relative to a fictive root in the user's share. "/" separates
+directories; each file or directory name must be unique in a case-insensitive
+context. All printable characters, including whitespace, are valid names for
+files, the "/" and "\" being escaped by "\". Clients must then properly filter
+the filename for the target file system, as well as request filenames from
+other clients according to these rules. The special names "." and ".." may not
+occur as a directory or filename; any file list received containing those must
+be ignored. All directory names must end with a "/".</p></div>
+<div class="para"><p>Shared files are identified relative to the unnamed root "/"
+("/dir/subdir/filename.ext"), while extensions can add named roots to this
+namespace. For example, "TTH/&#8230;" from the TIGR extension uses the named root
+"TTH" to identify files by their Tiger tree hash.  It is invalid for names
+from the unnamed root to appear in the share without also being identified by
+at least one hash value.</p></div>
+<div class="para"><p>The rootless filename "files.xml" specifies the full file listing,
+uncompressed, in XML using the UTF-8 encoding. It is recommended that clients
+use an extension to transfer this list in compressed form.</p></div>
+<div class="para"><p>Extensions may specify additional rootless filenames, but should generally
+avoid doing so to avoid name clashes.</p></div>
+<div class="para"><p>The special type "list" is used to browse partial lists. A partial file list
+has the same structure as a normal list, but directories may be tagged with an
+attribute <em>Incomplete="1"</em> to specify that they have unexpanded sub-entries.
+Only directory names in the unnamed root may be requested, for instance "/"
+and "/share/". The content of that directory will then be sent to the
+requesting client to a depth chosen by the sending client (it should normally
+only send the directory level requested, but may choose to send more if there
+are few entries, for example a directory only containing a few files). The
+"Base" attribute of "FileListing" specifies which directory a particular file
+list represents.</p></div>
+<h3 id="_file_list">4.2. File list</h3><div style="clear:left"></div>
+<div class="para"><p>files.xml is the list of files intended for browsing. The file list must
+validate against the following XML schema:</p></div>
+<div class="listingblock">
+<div class="content">
+<pre><tt>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;xs:simpleType name="base32Binary"&gt;
+    &lt;xs:restriction base="xs:string"&gt;
+      &lt;xs:pattern value="[A-Za-z2-7]+"&gt;&lt;/xs:pattern&gt;
+    &lt;/xs:restriction&gt;
+  &lt;/xs:simpleType&gt;
+
+  &lt;xs:simpleType name="zeroOne"&gt;
+    &lt;xs:restriction base="xs:int"&gt;
+      &lt;xs:enumeration value="0"&gt;&lt;/xs:enumeration&gt;
+      &lt;xs:enumeration value="1"&gt;&lt;/xs:enumeration&gt;
+    &lt;/xs:restriction&gt;
+  &lt;/xs:simpleType&gt;
+
+  &lt;xs:complexType name="ContainerType"&gt;
+    &lt;xs:sequence minOccurs="0" maxOccurs="unbounded"&gt;
+      &lt;xs:choice&gt;
+        &lt;xs:element ref="Directory"&gt;&lt;/xs:element&gt;
+        &lt;xs:element ref="File"&gt;&lt;/xs:element&gt;
+        &lt;xs:any processContents="lax"&gt;&lt;/xs:any&gt;
+      &lt;/xs:choice&gt;
+    &lt;/xs:sequence&gt;
+  &lt;/xs:complexType&gt;
+
+  &lt;xs:attribute name="Base" type="xs:string"&gt;&lt;/xs:attribute&gt;
+  &lt;xs:attribute name="CID" type="base32Binary"&gt;&lt;/xs:attribute&gt;
+  &lt;xs:attribute name="Generator" type="xs:string"&gt;&lt;/xs:attribute&gt;
+  &lt;xs:attribute name="Incomplete" type="zeroOne" default="0"&gt;&lt;/xs:attribute&gt;
+  &lt;xs:attribute name="Name" type="xs:string"&gt;&lt;/xs:attribute&gt;
+  &lt;xs:attribute name="Size" type="xs:int"&gt;&lt;/xs:attribute&gt;
+  &lt;xs:attribute name="Version" type="xs:int"&gt;&lt;/xs:attribute&gt;
+
+  &lt;xs:element name="FileListing"&gt;
+    &lt;xs:complexType&gt;
+      &lt;xs:complexContent&gt;
+        &lt;xs:extension base="ContainerType"&gt;
+          &lt;xs:attribute ref="CID" use="required"&gt;&lt;/xs:attribute&gt;
+          &lt;xs:attribute ref="Version" use="required"&gt;&lt;/xs:attribute&gt;
+          &lt;xs:attribute ref="Generator" use="optional"&gt;&lt;/xs:attribute&gt;
+          &lt;xs:attribute ref="Base" use="required"&gt;&lt;/xs:attribute&gt;
+          &lt;xs:anyAttribute processContents="lax"&gt;&lt;/xs:anyAttribute&gt;
+        &lt;/xs:extension&gt;
+      &lt;/xs:complexContent&gt;
+    &lt;/xs:complexType&gt;
+  &lt;/xs:element&gt;
+
+  &lt;xs:element name="Directory"&gt;
+    &lt;xs:complexType&gt;
+      &lt;xs:complexContent&gt;
+        &lt;xs:extension base="ContainerType"&gt;
+          &lt;xs:attribute ref="Name" use="required"&gt;&lt;/xs:attribute&gt;
+          &lt;xs:anyAttribute processContents="lax"&gt;&lt;/xs:anyAttribute&gt;
+        &lt;/xs:extension&gt;
+      &lt;/xs:complexContent&gt;
+    &lt;/xs:complexType&gt;
+  &lt;/xs:element&gt;
+
+  &lt;xs:element name="File"&gt;
+    &lt;xs:complexType&gt;
+      &lt;xs:sequence&gt;
+        &lt;xs:any minOccurs="0" maxOccurs="unbounded"&gt;&lt;/xs:any&gt;
+      &lt;/xs:sequence&gt;
+      &lt;xs:attribute ref="Name" use="required"&gt;&lt;/xs:attribute&gt;
+      &lt;xs:attribute ref="Size" use="required"&gt;&lt;/xs:attribute&gt;
+      &lt;xs:anyAttribute processContents="lax"&gt;&lt;/xs:anyAttribute&gt;
+    &lt;/xs:complexType&gt;
+  &lt;/xs:element&gt;
+
+&lt;/xs:schema&gt;</tt></pre>
+</div></div>
+<div class="para"><p>An example file list:</p></div>
+<div class="listingblock">
+<div class="content">
+<pre><tt>&lt;?xml version="1.0" encoding="utf-8" standalone="yes"?&gt;
+&lt;FileListing Version="1" CID="mycid" Generator="DC++ 0.701" Base="/"&gt;
+  &lt;Directory Name="share"&gt;
+    &lt;Directory Name="DC++ Prerelease"&gt;
+      &lt;File Name="DCPlusPlus.pdb" Size="17648640" TTH="xxx" /&gt;
+      &lt;File Name="DCPlusPlus.exe" Size="946176" TTH="yyy" /&gt;
+    &lt;/Directory&gt;
+    &lt;File Name="ADC.txt" Size="154112" TTH="zzz" /&gt;
+  &lt;/Directory&gt;
+  &lt;!-- Only used by partial lists --&gt;
+  &lt;Directory Name="share2" Incomplete="1"/&gt;
+&lt;/FileListing&gt;</tt></pre>
+</div></div>
+<div class="para"><p>"encoding" must always be set to UTF-8. Clients must be prepared to handle XML
+files both with and without a BOM (byte order mark), although should not
+output one.</p></div>
+<div class="para"><p>"Version" will not change unless a breaking change is done to the structure of
+the file.</p></div>
+<div class="para"><p>"CID" is the CID of the client that generated the list.</p></div>
+<div class="para"><p>"Generator" is optional and for informative purposes only.</p></div>
+<div class="para"><p>"Base" is used for partial file lists, but must be present even in the
+non-partial list.</p></div>
+<div class="para"><p>"Incomplete" signals whether a directory in a partial file list contains
+unlisted items. "1" means the directory contains unlisted items, "0" that it
+does not. Incomplete="0" is the default and may thus be omitted.</p></div>
+<div class="para"><p>More information may be added to the file by extensions, but is not guaranteed
+to be interpreted by other clients.</p></div>
+</div>
+<h2 id="_base_messages">5. BASE messages</h2>
+<div class="sectionbody">
+<div class="para"><p>ADC clients/hubs that support the following messages may advertise the feature
+"BASE" in the PROTOCOL phase.</p></div>
+<div class="para"><p>The connecting party will be known as client, the other as server. The server
+always controls state transitions. For each message, the action code and the
+message contexts under which it is valid are specified.</p></div>
+<div class="para"><p>The message context specifies how the message may be received / sent. Hubs and
+clients may support using the message in additional contexts as well. The
+context codes are as follows:</p></div>
+<div class="tableblock">
+<table rules="all"
+frame="border"
+cellspacing="0" cellpadding="4">
+<tbody valign="top">
+  <tr>
+    <td align="left">
+    F
+    </td>
+    <td align="left">
+    From hub (hub-client TCP)
+    </td>
+  </tr>
+  <tr>
+    <td align="left">
+    T
+    </td>
+    <td align="left">
+    To hub (hub-client TCP)
+    </td>
+  </tr>
+  <tr>
+    <td align="left">
+    C
+    </td>
+    <td align="left">
+    Between clients (client-client TCP)
+    </td>
+  </tr>
+  <tr>
+    <td align="left">
+    U
+    </td>
+    <td align="left">
+    Between clients (client-client UDP)
+    </td>
+  </tr>
+</tbody>
+</table>
+</div>
+<div class="para"><p>When requesting a new client-client connection, this protocol is identified by
+"ADC/1.0".</p></div>
+<div class="para"><p>In the descriptions of the commands, the message header and trailing named
+parameters have been omitted.</p></div>
+<h3 id="_client_hub_communication">5.1. Client – Hub communication</h3><div style="clear:left"></div>
+<div class="para"><p>During login, the client goes through a number of stages. An action is valid
+only in the NORMAL stage unless otherwise noted. The stages, in login order,
+are PROTOCOL (feature support discovery), IDENTIFY (user identification,
+static checks), VERIFY (password check), NORMAL (normal operation), and DATA
+(for binary transfers).</p></div>
+<h3 id="_client_client_communication">5.2. Client – Client communication</h3><div style="clear:left"></div>
+<div class="para"><p>The client – client protocol use the same stages as client – hub, but clients
+are not required to support the VERIFY state and GPA/PAS commands. Support for
+VERIFY/GPA/PAS must be advertised as an extension. It is always the client
+that sends the first CTM/RCM command that is given control of the connection
+once the NORMAL state has been reached.</p></div>
+<h3 id="_actions">5.3. Actions</h3><div style="clear:left"></div>
+<h4 id="_sta">5.3.1. STA</h4>
+<div class="literalblock">
+<div class="content">
+<pre><tt>STA code description</tt></pre>
+</div></div>
+<div class="para"><p>Contexts: F, T, C, U</p></div>
+<div class="para"><p>States: All</p></div>
+<div class="para"><p>Status code in the form "xyy" where x specifies severity and yy the specific
+error code. The severity and error code are treated separately, the same error
+could occur at different severity levels.</p></div>
+<div class="para"><p>Severity values:</p></div>
+<div class="tableblock">
+<table rules="all"
+frame="border"
+cellspacing="0" cellpadding="4">
+<tbody valign="top">
+  <tr>
+    <td align="left">
+    0
+    </td>
+    <td align="left">
+    Success (used for confirming commands), error code must be "00", and an additional flag "FC" contains the FOURCC of the command being confirmed if applicable.
+    </td>
+  </tr>
+  <tr>
+    <td align="left">
+    1
+    </td>
+    <td align="left">
+    Recoverable (error but no disconnect)
+    </td>
+  </tr>
+  <tr>
+    <td align="left">
+    2
+    </td>
+    <td align="left">
+    Fatal (disconnect)
+    </td>
+  </tr>
+</tbody>
+</table>
+</div>
+<div class="para"><p>Error codes:</p></div>
+<div class="tableblock">
+<table rules="all"
+frame="border"
+cellspacing="0" cellpadding="4">
+<tbody valign="top">
+  <tr>
+    <td align="left">
+    00
+    </td>
+    <td align="left">
+    Generic, show description
+    </td>
+  </tr>
+  <tr>
+    <td align="left">
+    x0
+    </td>
+    <td align="left">
+    Same as 00, but categorized according to the rough structure set below
+    </td>
+  </tr>
+  <tr>
+    <td align="left">
+    10
+    </td>
+    <td align="left">
+    Generic hub error
+    </td>
+  </tr>
+  <tr>
+    <td align="left">
+    11
+    </td>
+    <td align="left">
+    Hub full
+    </td>
+  </tr>
+  <tr>
+    <td align="left">
+    12
+    </td>
+    <td align="left">
+    Hub disabled
+    </td>
+  </tr>
+  <tr>
+    <td align="left">
+    20
+    </td>
+    <td align="left">
+    Generic login/access error
+    </td>
+  </tr>
+  <tr>
+    <td align="left">
+    21
+    </td>
+    <td align="left">
+    Nick invalid
+    </td>
+  </tr>
+  <tr>
+    <td align="left">
+    22
+    </td>
+    <td align="left">
+    Nick taken
+    </td>
+  </tr>
+  <tr>
+    <td align="left">
+    23
+    </td>
+    <td align="left">
+    Invalid password
+    </td>
+  </tr>
+  <tr>
+    <td align="left">
+    24
+    </td>
+    <td align="left">
+    CID taken
+    </td>
+  </tr>
+  <tr>
+    <td align="left">
+    25
+    </td>
+    <td align="left">
+    Access denied, flag "FC" is the FOURCC of the offending command. Sent when a user is not allowed to execute a particular command
+    </td>
+  </tr>
+  <tr>
+    <td align="left">
+    26
+    </td>
+    <td align="left">
+    Registered users only
+    </td>
+  </tr>
+  <tr>
+    <td align="left">
+    27
+    </td>
+    <td align="left">
+    Invalid PID supplied
+    </td>
+  </tr>
+  <tr>
+    <td align="left">
+    30
+    </td>
+    <td align="left">
+    Kicks/bans/disconnects generic
+    </td>
+  </tr>
+  <tr>
+    <td align="left">
+    31
+    </td>
+    <td align="left">
+    Permanently banned
+    </td>
+  </tr>
+  <tr>
+    <td align="left">
+    32
+    </td>
+    <td align="left">
+    Temporarily banned, flag "TL" is an integer specifying the number of seconds left until it expires (This is used for kick as well…).
+    </td>
+  </tr>
+  <tr>
+    <td align="left">
+    40
+    </td>
+    <td align="left">
+    Protocol error
+    </td>
+  </tr>
+  <tr>
+    <td align="left">
+    41
+    </td>
+    <td align="left">
+    Transfer protocol unsupported, flag "TO" the token, flag "PR" the protocol string. The client receiving a CTM or RCM should send this if it doesn't support the C-C protocol.
+    </td>
+  </tr>
+  <tr>
+    <td align="left">
+    42
+    </td>
+    <td align="left">
+    Direct connection failed, flag "TO" the token, flag "PR" the protocol string. The client receiving a CTM or RCM should send this if it tried but couldn't connect.
+    </td>
+  </tr>
+  <tr>
+    <td align="left">
+    43
+    </td>
+    <td align="left">
+    Required INF field missing/bad, flag "FM" specifies missing field, "FB" specifies invalid field.
+    </td>
+  </tr>
+  <tr>
+    <td align="left">
+    44
+    </td>
+    <td align="left">
+    Invalid state, flag "FC" the FOURCC of the offending command.
+    </td>
+  </tr>
+  <tr>
+    <td align="left">
+    45
+    </td>
+    <td align="left">
+    Required feature missing, flag "FC" specifies the FOURCC of the missing feature.
+    </td>
+  </tr>
+  <tr>
+    <td align="left">
+    46
+    </td>
+    <td align="left">
+    Invalid IP supplied in INF, flag "I4" or "I6" specifies the correct IP.
+    </td>
+  </tr>
+  <tr>
+    <td align="left">
+    47
+    </td>
+    <td align="left">
+    No hash support overlap in SUP between client and hub.
+    </td>
+  </tr>
+  <tr>
+    <td align="left">
+    50
+    </td>
+    <td align="left">
+    Client-client / file transfer error
+    </td>
+  </tr>
+  <tr>
+    <td align="left">
+    51
+    </td>
+    <td align="left">
+    File not available
+    </td>
+  </tr>
+  <tr>
+    <td align="left">
+    52
+    </td>
+    <td align="left">
+    File part not available
+    </td>
+  </tr>
+  <tr>
+    <td align="left">
+    53
+    </td>
+    <td align="left">
+    Slots full
+    </td>
+  </tr>
+  <tr>
+    <td align="left">
+    54
+    </td>
+    <td align="left">
+    No hash support overlap in SUP between clients.
+    </td>
+  </tr>
+</tbody>
+</table>
+</div>
+<div class="para"><p>Description:
+Description of the error, suitable for viewing directly by the user</p></div>
+<div class="para"><p>Even if an error code is unknown by the client, it should display the text
+message alone. Error codes are used so that the client can take different
+action on different errors. Most error codes don't have parameters and only
+make sense in C and I types.</p></div>
+<h4 id="_sup">5.3.2. SUP</h4>
+<div class="literalblock">
+<div class="content">
+<pre><tt>SUP ('AD' | 'RM') feature (separator ('AD' | 'RM') feature)*</tt></pre>
+</div></div>
+<div class="para"><p>Contexts: F, T, C</p></div>
+<div class="para"><p>States: PROTOCOL, NORMAL</p></div>
+<div class="para"><p>This command identifies which features a specific client / hub supports. The
+feature name consists of four uppercase letters, where the last letter may be
+changed to a number to indicate a revised version of the feature. A central
+register of known features should be kept, to avoid clashes. All ADC clients
+must support the BASE feature (unless a future revision takes its place),
+which is this protocol. The server may use any feature that the client
+indicates support for regardless of its own SUP, and vice versa.</p></div>
+<div class="para"><p>This command can also be used to dynamically add / remove features, <em>AD</em>
+meaning add and <em>RM</em> meaning remove.</p></div>
+<div class="para"><p>When the hub receives this message in PROTOCOL state, it should reply in kind,
+assign a SID to the client, optionally send an INF about itself, and move to
+the IDENTIFY state.</p></div>
+<div class="para"><p>When the server receives this message in a client-client connection in the
+PROTOCOL state, it should reply in kind, send an INF about itself, and move to
+the IDENTIFY state.</p></div>
+<h4 id="_sid">5.3.3. SID</h4>
+<div class="literalblock">
+<div class="content">
+<pre><tt>SID sid</tt></pre>
+</div></div>
+<div class="para"><p>Contexts: F</p></div>
+<div class="para"><p>States: PROTOCOL</p></div>
+<div class="para"><p>This command assigns a SID to a user who is currently logging on. The hub must
+send this command after SUP but before INF in the PROTOCOL state. The client,
+when it receives it, should send an INF about itself.</p></div>
+<h4 id="_inf">5.3.4. INF</h4>
+<div class="literalblock">
+<div class="content">
+<pre><tt>INF</tt></pre>
+</div></div>
+<div class="para"><p>Contexts: F, T, C</p></div>
+<div class="para"><p>States: IDENTIFY, NORMAL</p></div>
+<div class="para"><p>This command updates the information about a client. Each time this is
+received, it means that the fields specified have been added or updated. Each
+field is identified by two characters, directly followed by the data
+associated with that field. A field, and the effects of its presence, can be
+canceled by sending the field name without data. Clients must ignore fields
+they don't recognize. Most of these fields are only interesting in the
+client-hub communication; during client-client this command is mainly used for
+identification purposes. Hubs can choose to require or ignore any or all of
+these fields; clients must work without any of them. Many of these fields,
+such as share size and client version, are purely informative, and should be
+taken with a grain of salt, as it is very easy to fake them. However, clients
+should strive to provide accurate data for the general health of the system,
+as providing invalid information probably will annoy a great deal of people.
+Updates are made in an incremental manner, by sending only the fields that
+have changed.</p></div>
+<div class="para"><p>Fields:</p></div>
+<div class="tableblock">
+<table rules="all"
+frame="border"
+cellspacing="0" cellpadding="4">
+<thead>
+  <tr>
+    <th align="left">
+    Code
+    </th>
+    <th align="left">
+    Type
+    </th>
+    <th align="left">
+    Description
+    </th>
+  </tr>
+</thead>
+<tbody valign="top">
+  <tr>
+    <td align="left">
+    ID
+    </td>
+    <td align="left">
+    base32
+    </td>
+    <td align="left">
+    The CID of the client. Mandatory for C-C connections.
+    </td>
+  </tr>
+  <tr>
+    <td align="left">
+    PD
+    </td>
+    <td align="left">
+    base32
+    </td>
+    <td align="left">
+    The PID of the client. Hubs must check that the hash(PID) == CID and then discard the field before broadcasting it to other clients. Must not be sent in C-C connections.
+    </td>
+  </tr>
+  <tr>
+    <td align="left">
+    I4
+    </td>
+    <td align="left">
+    IPv4
+    </td>
+    <td align="left">
+    IPv4 address without port. A zero address (0.0.0.0) means that the server should replace it with the real IP of the client. Hubs must check that a specified address corresponds to what the client is connecting from to avoid DoS attacks and only allow trusted clients to specify a different address. Clients should use the zero address when connecting, but may opt not to do so at the user's discretion. Any client that supports incoming TCPv4 connections must also add the feature TCP4 to their SU field.
+    </td>
+  </tr>
+  <tr>
+    <td align="left">
+    I6
+    </td>
+    <td align="left">
+    IPv6
+    </td>
+    <td align="left">
+    IPv6 address without port. A zero address (::) means that the server should replace it with the IP of the client. Any client that supports incoming TCPv6 connections must also add the feature TCP6 to their SU field.
+    </td>
+  </tr>
+  <tr>
+    <td align="left">
+    U4
+    </td>
+    <td align="left">
+    integer
+    </td>
+    <td align="left">
+    Client UDP port. Any client that supports incoming UDPv4 packets must also add the feature UDP4 to their SU field.
+    </td>
+  </tr>
+  <tr>
+    <td align="left">
+    U6
+    </td>
+    <td align="left">
+    integer
+    </td>
+    <td align="left">
+    Same as U4, but for IPv6. Any client that supports incoming UDPv6 packets must also add the feature UDP6 to their SU field.
+    </td>
+  </tr>
+  <tr>
+    <td align="left">
+    SS
+    </td>
+    <td align="left">
+    integer
+    </td>
+    <td align="left">
+    Share size in bytes
+    </td>
+  </tr>
+  <tr>
+    <td align="left">
+    SF
+    </td>
+    <td align="left">
+    integer
+    </td>
+    <td align="left">
+    Number of shared files
+    </td>
+  </tr>
+  <tr>
+    <td align="left">
+    VE
+    </td>
+    <td align="left">
+    string
+    </td>
+    <td align="left">
+    Client identification, version (client-specific, a short identifier then a dotted version number is recommended)
+    </td>
+  </tr>
+  <tr>
+    <td align="left">
+    US
+    </td>
+    <td align="left">
+    integer
+    </td>
+    <td align="left">
+    Maximum upload speed, bytes/second
+    </td>
+  </tr>
+  <tr>
+    <td align="left">
+    DS
+    </td>
+    <td align="left">
+    integer
+    </td>
+    <td align="left">
+    Maximum download speed, bytes/second
+    </td>
+  </tr>
+  <tr>
+    <td align="left">
+    SL
+    </td>
+    <td align="left">
+    integer
+    </td>
+    <td align="left">
+    Maximum simultaneous upload connections (slots)
+    </td>
+  </tr>
+  <tr>
+    <td align="left">
+    AS
+    </td>
+    <td align="left">
+    integer
+    </td>
+    <td align="left">
+    Automatic slot allocator speed limit, bytes/sec. The client keeps opening slots as long as its total upload speed doesn't exceed this value.
+    </td>
+  </tr>
+  <tr>
+    <td align="left">
+    AM
+    </td>
+    <td align="left">
+    integer
+    </td>
+    <td align="left">
+    Minimum simultaneous upload connectins in automatic slot manager mode
+    </td>
+  </tr>
+  <tr>
+    <td align="left">
+    EM
+    </td>
+    <td align="left">
+    string
+    </td>
+    <td align="left">
+    E-mail address
+    </td>
+  </tr>
+  <tr>
+    <td align="left">
+    NI
+    </td>
+    <td align="left">
+    string
+    </td>
+    <td align="left">
+    Nickname (or hub name). The hub must ensure that this is unique in the hub up to case-sensitivity. Valid are all characters in the Unicode character set with code point above 32, although hubs may limit this further as they like with an appropriate error message.
+    </td>
+  </tr>
+  <tr>
+    <td align="left">
+    DE
+    </td>
+    <td align="left">
+    string
+    </td>
+    <td align="left">
+    Description. Valid are all characters in the Unicode character set with code point equal to or greater than 32.
+    </td>
+  </tr>
+  <tr>
+    <td align="left">
+    HN
+    </td>
+    <td align="left">
+    integer
+    </td>
+    <td align="left">
+    Hubs where user is a normal user and in NORMAL state
+    </td>
+  </tr>
+  <tr>
+    <td align="left">
+    HR
+    </td>
+    <td align="left">
+    integer
+    </td>
+    <td align="left">
+    Hubs where user is registered (had to supply password) and in NORMAL state
+    </td>
+  </tr>
+  <tr>
+    <td align="left">
+    HO
+    </td>
+    <td align="left">
+    integer
+    </td>
+    <td align="left">
+    Hubs where user is op and in NORMAL state
+    </td>
+  </tr>
+  <tr>
+    <td align="left">
+    TO
+    </td>
+    <td align="left">
+    string
+    </td>
+    <td align="left">
+    Token, as received in RCM/CTM, when establishing a C-C connection.
+    </td>
+  </tr>
+  <tr>
+    <td align="left">
+    CT
+    </td>
+    <td align="left">
+    integer
+    </td>
+    <td align="left">
+    Client (user) type, 1=bot, 2=registered user, 4=operator, 8=super user, 16=hub owner, 32=hub (used when the hub sends an INF about itself). Multiple types are specified by adding the numbers together.
+    </td>
+  </tr>
+  <tr>
+    <td align="left">
+    AW
+    </td>
+    <td align="left">
+    integer
+    </td>
+    <td align="left">
+    1=Away, 2=Extended away, not interested in hub chat (hubs may skip sending broadcast type MSG commands to clients with this flag)
+    </td>
+  </tr>
+  <tr>
+    <td align="left">
+    SU
+    </td>
+    <td align="left">
+    string
+    </td>
+    <td align="left">
+    Comma-separated list of feature FOURCC's. This notifies other clients of extended capabilities of the connecting client.
+    </td>
+  </tr>
+  <tr>
+    <td align="left">
+    RF
+    </td>
+    <td align="left">
+    string
+    </td>
+    <td align="left">
+    URL of referer (hub in case of redirect, web page)
+    </td>
+  </tr>
+</tbody>
+</table>
+</div>
+<div class="admonitionblock">
+<table><tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">Normally one would only accept an IP (I4 or I6) that is the same as the
+source IP of the connecting peer. Use caution when accepting unknown IPs. Only
+for trusted users one may allow a different IP or an IP from a different
+domain (IPv4 or IPv6) to be specified. If you fail to do this, your hub can be
+used as a medium for DDoS attacks.</td>
+</tr></table>
+</div>
+<div class="para"><p>When a hub receives this message in the IDENTIFY state, it should verify the
+PD and ID fields, and proceed to the VERIFY state by sending a PAS request or
+NORMAL state by sending its own INF (unless it already did so previously),
+then the INF of all connected clients in NORMAL state, and last the INF of the
+connecting client. When the hub sends an INF about itself, the NI becomes hub
+name, the VE the hub version, and DE the hub description.</p></div>
+<div class="para"><p>When the server receives this during client-client communication in IDENTIFY
+state, it should verify the ID and TO fields, send an INF about itself and
+pass to the NORMAL state.</p></div>
+<h4 id="_msg">5.3.5. MSG</h4>
+<div class="literalblock">
+<div class="content">
+<pre><tt>MSG text</tt></pre>
+</div></div>
+<div class="para"><p>Contexts: F, T</p></div>
+<div class="para"><p>A chat message. The receiving clients should precede it with "&lt;" nick "&gt;", to
+allow for uniform message displays.</p></div>
+<div class="para"><p>Flags:</p></div>
+<div class="tableblock">
+<table rules="all"
+frame="border"
+cellspacing="0" cellpadding="4">
+<tbody valign="top">
+  <tr>
+    <td align="left">
+    PM&lt;group-SID&gt;
+    </td>
+    <td align="left">
+    Private message, &lt;group-SID&gt; is the SID clients must send responses to. This field must contain the originating SID if this is a normal private conversation.
+    </td>
+  </tr>
+  <tr>
+    <td align="left">
+    ME
+    </td>
+    <td align="left">
+    1 = message should be displayed as /me in IRC ("*nick text")
+    </td>
+  </tr>
+</tbody>
+</table>
+</div>
+<h4 id="_sch">5.3.6. SCH</h4>
+<div class="literalblock">
+<div class="content">
+<pre><tt>SCH</tt></pre>
+</div></div>
+<div class="para"><p>Contexts: F, T, C, (U)</p></div>
+<div class="para"><p>Search. Each parameter is an operator followed by a term. Each term is a
+two-letter code followed by the data to search for. Clients must ignore any
+unknown fields and complete the search request as if they were not present,
+unless no known fields are present in which case the client must ignore the
+search.</p></div>
+<div class="tableblock">
+<table rules="all"
+frame="border"
+cellspacing="0" cellpadding="4">
+<tbody valign="top">
+  <tr>
+    <td align="left">
+    AN, NO, EX
+    </td>
+    <td align="left">
+    String search term, where AN is include (and), NO is exclude (and not), and EX is extension. Each filename (including the path to it) should be matched using case insensitive substring search as follows: match all AN, remove those that match any NO, and make sure the extension matches at least one of the EX (if it is present). Extensions must be sent without the leading <em>.</em>.
+    </td>
+  </tr>
+  <tr>
+    <td align="left">
+    LE
+    </td>
+    <td align="left">
+    Smaller (less) than or equal size in bytes
+    </td>
+  </tr>
+  <tr>
+    <td align="left">
+    GE
+    </td>
+    <td align="left">
+    Larger (greater) than or equal size in bytes
+    </td>
+  </tr>
+  <tr>
+    <td align="left">
+    EQ
+    </td>
+    <td align="left">
+    Exact size in bytes
+    </td>
+  </tr>
+  <tr>
+    <td align="left">
+    TO
+    </td>
+    <td align="left">
+    Token, string. Used by the client to tell one search from the other. If present, the responding client must copy this field to each search result.
+    </td>
+  </tr>
+  <tr>
+    <td align="left">
+    TY
+    </td>
+    <td align="left">
+    File type, to be chosen from the following (none specified = any type): 1 = File, 2 = Directory
+    </td>
+  </tr>
+</tbody>
+</table>
+</div>
+<div class="para"><p>Searching by UDP is subject to IP spoofing; can thus be used to initiate a DoS
+attack. Clients should only accept incoming UDP searches in a trusted
+environment.</p></div>
+<h4 id="_res">5.3.7. RES</h4>
+<div class="literalblock">
+<div class="content">
+<pre><tt>RES</tt></pre>
+</div></div>
+<div class="para"><p>Contexts: F, T, C, U</p></div>
+<div class="para"><p>Search result, made up of fields syntactically and structurally similar to the
+INF ones. Clients must provide filename, session hash, size and token, but are
+encouraged to supply additional fields if available. Passive results should be
+limited to 5 and active to 10.</p></div>
+<div class="tableblock">
+<table rules="all"
+frame="border"
+cellspacing="0" cellpadding="4">
+<tbody valign="top">
+  <tr>
+    <td align="left">
+    FN
+    </td>
+    <td align="left">
+    Full filename including path in share
+    </td>
+  </tr>
+  <tr>
+    <td align="left">
+    SI
+    </td>
+    <td align="left">
+    Size, in bytes
+    </td>
+  </tr>
+  <tr>
+    <td align="left">
+    SL
+    </td>
+    <td align="left">
+    Slots currently available
+    </td>
+  </tr>
+  <tr>
+    <td align="left">
+    TO
+    </td>
+    <td align="left">
+    Token
+    </td>
+  </tr>
+</tbody>
+</table>
+</div>
+<h4 id="_ctm">5.3.8. CTM</h4>
+<div class="literalblock">
+<div class="content">
+<pre><tt>CTM protocol separator port separator token</tt></pre>
+</div></div>
+<div class="para"><p>Contexts: F, T</p></div>
+<div class="para"><p>Connect to me. Used by active clients that want to connect to someone, or in
+response to RCM. Only TCP active clients may send this. &lt;token&gt; is a string
+that identifies the incoming connection triggered by this command and must be
+present in the INF command of the connecting client. Clients should not accept
+incoming connections with a token they did not send earlier. &lt;protocol&gt; is an
+arbitrary string specifying the protocol to connect with; in the case of an
+ADC 1.0 compliant connection attempt, this should be the string "ADC/1.0". If
+&lt;protocol&gt; is supported, a response to RCM must copy the &lt;token&gt; and
+&lt;protocol&gt; fields directly. If a protocol is not supported, a DSTA must be
+sent indicating this.</p></div>
+<h4 id="_rcm">5.3.9. RCM</h4>
+<div class="literalblock">
+<div class="content">
+<pre><tt>RCM protocol separator token</tt></pre>
+</div></div>
+<div class="para"><p>Contexts: F, T</p></div>
+<div class="para"><p>Reverse CTM. Used by passive clients to request a connection token from an
+active client.</p></div>
+<h4 id="_gpa">5.3.10. GPA</h4>
+<div class="literalblock">
+<div class="content">
+<pre><tt>GPA data</tt></pre>
+</div></div>
+<div class="para"><p>Contexts: F</p></div>
+<div class="para"><p>States: VERIFY</p></div>
+<div class="para"><p>Get Password. The data parameter is at least 24 random bytes (base32 encoded).</p></div>
+<h4 id="_pas">5.3.11. PAS</h4>
+<div class="literalblock">
+<div class="content">
+<pre><tt>PAS password</tt></pre>
+</div></div>
+<div class="para"><p>Contexts: T</p></div>
+<div class="para"><p>States: VERIFY</p></div>
+<div class="para"><p>Password. The password (utf-8 encoded bytes), followed by the random data
+(binary), passed through the session hash algorithm then converted to base32.
+When validated, this transitions the server into NORMAL state.</p></div>
+<h4 id="_qui">5.3.12. QUI</h4>
+<div class="literalblock">
+<div class="content">
+<pre><tt>QUI sid</tt></pre>
+</div></div>
+<div class="para"><p>Contexts: F</p></div>
+<div class="para"><p>States: IDENTIFY, VERIFY, NORMAL</p></div>
+<div class="para"><p>The client identified by &lt;sid&gt; disconnected from the hub. If the SID belongs
+to the client receiving the QUI, it means that it should take action according
+to the reason (i.e. redirect or not reconnect in case of ban). The hub must
+not send data after the QUI to the client being disconnected.</p></div>
+<div class="para"><p>The following flags may be present:</p></div>
+<div class="tableblock">
+<table rules="all"
+frame="border"
+cellspacing="0" cellpadding="4">
+<tbody valign="top">
+  <tr>
+    <td align="left">
+    ID
+    </td>
+    <td align="left">
+    SID of the initiator of the disconnect (for example the one that issued a kick).
+    </td>
+  </tr>
+  <tr>
+    <td align="left">
+    TL
+    </td>
+    <td align="left">
+    Time Left until reconnect is allowed, in seconds. -1 = forever.
+    </td>
+  </tr>
+  <tr>
+    <td align="left">
+    MS
+    </td>
+    <td align="left">
+    Message.
+    </td>
+  </tr>
+  <tr>
+    <td align="left">
+    RD
+    </td>
+    <td align="left">
+    Redirect server URL.
+    </td>
+  </tr>
+  <tr>
+    <td align="left">
+    DI
+    </td>
+    <td align="left">
+    Any client that has this flag in the QUI message should have its transfers terminated by other clients connected to it, as it is unwanted in the system.
+    </td>
+  </tr>
+</tbody>
+</table>
+</div>
+<h4 id="_get">5.3.13. GET</h4>
+<div class="literalblock">
+<div class="content">
+<pre><tt>GET type identifier start_pos bytes</tt></pre>
+</div></div>
+<div class="para"><p>Contexts: C</p></div>
+<div class="para"><p>Requests that a certain file or binary data be transmitted. &lt;start_pos&gt; counts
+0 as the first byte. &lt;bytes&gt; may be set to -1 to indicate that the sending
+client should fill it in with the number of bytes needed to complete the file
+from &lt;start_pos&gt;. &lt;type&gt; is a [a-zA-Z0-9]+ string that specifies the namespace
+for identifier and BASE requires that clients recognize the types "file" and
+"list". Extensions may add to the identifier names as well as add new types.</p></div>
+<div class="para"><p>"file" transfers transfer the file data in binary, starting at &lt;start_pos&gt; and
+sending &lt;bytes&gt; bytes. Identifier must come from the namespace of the current
+session hash.</p></div>
+<div class="para"><p>"list" transfers are used for partial file lists and have a directory as
+identifier. &lt;start_pos&gt; is always 0 and &lt;bytes&gt; contains the uncompressed
+length of the generated XML text in the corresponding SND. An optional flag
+"RE1" means that the client is requesting a recursive list and that the
+sending client should send the directory itself and all subdirectories as
+well. If this is too much, the sending client may choose to send only parts.
+The flag should be taken as a hint that the requesting client will be getting
+the subdirectories as well, so they might as well be sent in one go.
+Identifier must be a directory in the unnamed root, ending (and beginning)
+with "/".</p></div>
+<div class="para"><p>Note that GET can also be used by extensions for binary transfers between hub
+and client.</p></div>
+<h4 id="_gfi">5.3.14. GFI</h4>
+<div class="literalblock">
+<div class="content">
+<pre><tt>GFI type identifier</tt></pre>
+</div></div>
+<div class="para"><p>Contexts: C</p></div>
+<div class="para"><p>Get File Information. Requests that the other client returns a RES about the
+file as if it had responded to a SCH command. Type and identifier are the same
+as for GET, but the identifier may come from any namespace, including the
+unnamed root.</p></div>
+<h4 id="_snd">5.3.15. SND</h4>
+<div class="literalblock">
+<div class="content">
+<pre><tt>SND type identifier start_pos bytes</tt></pre>
+</div></div>
+<div class="para"><p>Contexts: C</p></div>
+<div class="para"><p>Transitions to DATA state. The sender will transmit until &lt;bytes&gt; bytes of
+binary data have been sent and then will transition back to NORMAL state. The
+parameters correspond to the GET parameters except that if &lt;bytes&gt; equals -1
+it must be replaced by the number of bytes needed to complete the file
+starting at &lt;start_pos&gt;.</p></div>
+</div>
+<h2 id="_examples">6. Examples</h2>
+<div class="sectionbody">
+<h3 id="_client_hub_connection">6.1. Client – Hub connection</h3><div style="clear:left"></div>
+<div class="tableblock">
+<table rules="all"
+frame="border"
+cellspacing="0" cellpadding="4">
+<thead>
+  <tr>
+    <th align="left">
+    Client
+    </th>
+    <th align="left">
+    Hub
+    </th>
+  </tr>
+</thead>
+<tbody valign="top">
+  <tr>
+    <td align="left">
+    HSUP ADBASE ADTIGR &#8230;
+    </td>
+    <td align="left">
+    
+    </td>
+  </tr>
+  <tr>
+    <td align="left">
+    
+    </td>
+    <td align="left">
+    ISUP ADBASE ADTIGR &#8230;
+    </td>
+  </tr>
+  <tr>
+    <td align="left">
+    
+    </td>
+    <td align="left">
+    ISID &lt;client-sid&gt;
+    </td>
+  </tr>
+  <tr>
+    <td align="left">
+    
+    </td>
+    <td align="left">
+    IINF HU1 HI1 &#8230;
+    </td>
+  </tr>
+  <tr>
+    <td align="left">
+    BINF &lt;my-sid&gt; ID&#8230; PD&#8230;
+    </td>
+    <td align="left">
+    
+    </td>
+  </tr>
+  <tr>
+    <td align="left">
+    
+    </td>
+    <td align="left">
+    IGPA &#8230;
+    </td>
+  </tr>
+  <tr>
+    <td align="left">
+    HPAS &#8230;
+    </td>
+    <td align="left">
+    
+    </td>
+  </tr>
+  <tr>
+    <td align="left">
+    
+    </td>
+    <td align="left">
+    BINF &lt;all clients&gt;
+    </td>
+  </tr>
+  <tr>
+    <td align="left">
+    
+    </td>
+    <td align="left">
+    BINF &lt;Client-SID&gt;
+    </td>
+  </tr>
+  <tr>
+    <td align="left">
+    &#8230;
+    </td>
+    <td align="left">
+    &#8230;
+    </td>
+  </tr>
+</tbody>
+</table>
+</div>
+<h3 id="_client_client_connection">6.2. Client – Client connection</h3><div style="clear:left"></div>
+<div class="tableblock">
+<table rules="all"
+frame="border"
+cellspacing="0" cellpadding="4">
+<thead>
+  <tr>
+    <th align="left">
+    Client
+    </th>
+    <th align="left">
+    Server
+    </th>
+  </tr>
+</thead>
+<tbody valign="top">
+  <tr>
+    <td align="left">
+    CSUP ADBASE ADTIGR &#8230;
+    </td>
+    <td align="left">
+    
+    </td>
+  </tr>
+  <tr>
+    <td align="left">
+    
+    </td>
+    <td align="left">
+    CSUP ADBASE ADTIGR &#8230;
+    </td>
+  </tr>
+  <tr>
+    <td align="left">
+    
+    </td>
+    <td align="left">
+    CINF IDxxx
+    </td>
+  </tr>
+  <tr>
+    <td align="left">
+    CINF IDxxx TO&lt;token&gt;
+    </td>
+    <td align="left">
+    
+    </td>
+  </tr>
+  <tr>
+    <td align="left">
+    
+    </td>
+    <td align="left">
+    CGET &#8230;
+    </td>
+  </tr>
+  <tr>
+    <td align="left">
+    CSND &#8230;
+    </td>
+    <td align="left">
+    
+    </td>
+  </tr>
+  <tr>
+    <td align="left">
+    &lt;data&gt;
+    </td>
+    <td align="left">
+    
+    </td>
+  </tr>
+</tbody>
+</table>
+</div>
+</div>
+<h2 id="_standard_extensions">7. Standard Extensions</h2>
+<div class="sectionbody">
+<div class="para"><p>Apart from supporting BASE, clients may opt to implement one or more of the
+following standard extensions. To be considered for addition, an extension must
+be well documented and must be implemented and tested in the real world.</p></div>
+<h3 id="_tigr_tiger_tree_hash_support">7.1. TIGR - Tiger tree hash support</h3><div style="clear:left"></div>
+<h4 id="_general_2">7.1.1. General</h4>
+<div class="para"><p>This extension adds Tiger tree hash support to the base protocol. It is
+intended to be used both for identifying files and for purposes such as CID
+generation and password negotiation</p></div>
+<h4 id="_tigr_for_shared_files">7.1.2. TIGR for shared files</h4>
+<div class="para"><p>All files shared by TIGR supporting clients must have been hashed using Merkle
+Hash trees, as defined by
+http://www.open-content.net/specs/draft-jchapweske-thex-02.html.  The Tiger
+algorithm, as specified by http://www.cs.technion.ac.il/~biham/Reports/Tiger/,
+functions as the hash algorithm. A base segment size of 1024 bytes must be
+used when generating the tree, but clients may then discard parts of the tree
+as long as at least 7 levels are kept or a block granularity of 64 KiB is
+achieved.</p></div>
+<div class="para"><p>Generally, the root of the tree (TTH) serves to identify a file uniquely.
+Searches use it and it must be present in the file list. Further, the root of
+the file list must also be available and discoverable via GFI. A client may
+also request the rest of the tree using the normal client-client transfer
+procedure. The root must be encoded using base32 encoding when converted to
+text.</p></div>
+<div class="para"><p>In the file list, each File element carries an additional attribute "TTH"
+containing the base32-encoded value of the Tiger tree root.</p></div>
+<div class="para"><p>In the GET/GFI type, the full tree may be accessed using the "tthl" type.</p></div>
+<div class="para"><p>"tthl" transfers send the largest set of leaves available) as a binary stream
+of leaf data, right-to-left, with no spacing in between them.  &lt;start_pos&gt;
+must be set to 0 and &lt;bytes&gt; to -1 when requesting the data.  &lt;bytes&gt; must
+contain the total binary size of the leaf stream in SND; by dividing this
+length by the individual hash length, the number of leaves, and thus the leaf
+level, can be deducted. The received leaves can then be used to reconstruct
+the entire tree, and the resulting root must match the root of the file (this
+verifies the integrity of the tree itself). Identifier must be a TTH root
+value from the "TTH/" root.</p></div>
+<div class="para"><p>In the GET/GFI namespace, files are identified by
+"TTH/&lt;base32-encoded tree root&gt;".</p></div>
+<div class="para"><p>In SCH and GFI, the following attributes are added:</p></div>
+<div class="tableblock">
+<table rules="all"
+frame="border"
+cellspacing="0" cellpadding="4">
+<tbody valign="top">
+  <tr>
+    <td align="left">
+    TR
+    </td>
+    <td align="left">
+    Tiger tree Hash root, encoded with base32.
+    </td>
+  </tr>
+  <tr>
+    <td align="left">
+    TD
+    </td>
+    <td align="left">
+    Tree depth, index of the highest level of tree data available, root-only = 0, first level (2 leaves) = 1, second level = 2, etc&#8230;
+    </td>
+  </tr>
+</tbody>
+</table>
+</div>
+<h3 id="_bzip_file_list_compressed_with_bzip2">7.2. BZIP – File list compressed with bzip2</h3><div style="clear:left"></div>
+<div class="para"><p>This extension adds a special file "files.xml.bz2" in the unnamed root of the
+share which contains "files.xml" compressed with bzip2 1.0.3+ (www.bzip.org).</p></div>
+<h3 id="_zlib_compressed_communication">7.3. ZLIB - Compressed communication</h3><div style="clear:left"></div>
+<div class="para"><p>There are two variants of zlib support, FULL and GET, and only one should be
+used on a each communications channel set up.</p></div>
+<h4 id="_zlib_full">7.3.1. ZLIB-FULL</h4>
+<div class="para"><p>If, during SUP negotiation, a peer sends "ZLIF" in its support string, it must
+accept two additional commands, ZON and ZOF. Upon reception of ZON the peer
+must start decompressing the incoming stream of data with zlib before
+interpreting it, and stop doing so after ZOF is received (in the compressed
+stream). The compressing end must partially flush the zlib buffer after each
+chunk of data to allow for decompression by the peer.</p></div>
+<h4 id="_zlib_get">7.3.2. ZLIB-GET</h4>
+<div class="para"><p>The alternative is to send "ZLIG" to indicate that zlib is supported for
+binary transfers using the GET command, but not otherwise. A flag "ZL1" is
+added to the to the SND command to indicate that the data will come
+compressed, and the client receiving requests it by adding the same flag to
+GET (the sending client may ignore a request for a compressed transfer, but
+may also use it even when not requested by the receiver). The &lt;bytes&gt;
+parameter of the GET and SND commands is to be interpreted as the number of
+uncompressed bytes to be transferred.</p></div>
+</div>
+<div id="footer">
+<div id="footer-text">
+Version 1.0<br />
+Last updated 2007-12-01 22:16:10 CEST
+</div>
+</div>
+</body>
+</html>
